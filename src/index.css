@@ -1,0 +1,90 @@
+/* Pretendard 한글 폰트 */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+/* Fraunces - 영문/숫자에만 적용 */
+@font-face {
+  font-family: 'Fraunces-EN';
+  src: url('https://fonts.gstatic.com/s/fraunces/v33/6NUh8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0020-007F, U+0080-00FF, U+2010-2027, U+2030-205E;
+}
+
+@font-face {
+  font-family: 'Fraunces-EN';
+  src: url('https://fonts.gstatic.com/s/fraunces/v33/6NUh8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0020-007F, U+0080-00FF, U+2010-2027, U+2030-205E;
+}
+
+:root {
+  font-family: 'Pretendard', system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #F5F5F5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* 영문 Fraunces, 한글은 자동으로 Pretendard 폴백 */
+.serif {
+  font-family: 'Fraunces', 'Pretendard', system-ui, sans-serif !important;
+  font-weight: 700 !important;
+}
+
+
+
+.lime-underline {
+  background-image: linear-gradient(transparent 60%, #E8FF47 60%);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+/* 애니메이션 */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes blink-dday {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes pulse-lime {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(232, 255, 71, 0.5); }
+  50% { box-shadow: 0 0 0 12px rgba(232, 255, 71, 0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.ticker {
+  display: flex;
+  animation: marquee 40s linear infinite;
+  white-space: nowrap;
+  width: max-content;
+}
+
+.stagger-1 { animation: fadeUp 0.8s ease 0.1s both; }
+.stagger-2 { animation: fadeUp 0.8s ease 0.3s both; }
+.stagger-3 { animation: fadeUp 0.8s ease 0.5s both; }
+.stagger-4 { animation: fadeUp 0.8s ease 0.7s both; }
