@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, ArrowRight, Check, Mic, Briefcase, Globe, Volume2, Clock } from 'lucide-react';
+import { trackCta } from './analytics.js';
 
 export default function App() {
   const [activeFAQ, setActiveFAQ] = useState(null);
@@ -204,7 +205,7 @@ export default function App() {
           <a className="hide-mobile" href="#how" style={{ fontSize: 14, color: '#0D0D0D', textDecoration: 'none', fontWeight: 500 }}>How</a>
           <a className="hide-mobile" href="#faq" style={{ fontSize: 14, color: '#0D0D0D', textDecoration: 'none', fontWeight: 500 }}>FAQ</a>
           <button
-            onClick={() => setShowBetaModal(true)}
+            onClick={() => { trackCta('nav_diagnosis', 'nav', '5분 진단'); setShowBetaModal(true); }}
             style={{
               backgroundColor: '#0D0D0D', color: '#E8FF47',
               border: 'none', padding: isMobile ? '8px 14px' : '10px 20px', borderRadius: 6,
@@ -267,7 +268,7 @@ export default function App() {
             flexWrap: 'wrap', flexDirection: isMobile ? 'column' : 'row'
           }}>
             <button
-              onClick={() => setShowBetaModal(true)}
+              onClick={() => { trackCta('hero_diagnosis', 'hero', '5분 무료 진단 받기'); setShowBetaModal(true); }}
               style={{
                 backgroundColor: '#0D0D0D', color: '#E8FF47',
                 border: 'none', padding: isMobile ? '18px 28px' : '20px 36px', borderRadius: 8,
@@ -279,7 +280,7 @@ export default function App() {
               5분 무료 진단 받기 <ArrowRight size={20} />
             </button>
             <button
-              onClick={() => setShowBetaModal(true)}
+              onClick={() => { trackCta('hero_waitlist', 'hero', '베타 대기자 등록'); setShowBetaModal(true); }}
               style={{
                 backgroundColor: 'transparent', color: '#0D0D0D',
                 border: '2px solid #0D0D0D', padding: isMobile ? '16px 26px' : '18px 34px', borderRadius: 8,
@@ -767,7 +768,7 @@ export default function App() {
             marginBottom: 32, maxWidth: isMobile ? 320 : 'auto', margin: '0 auto 32px'
           }}>
             <button
-              onClick={() => setShowBetaModal(true)}
+              onClick={() => { trackCta('final_diagnosis', 'final', '5분 무료 진단 받기'); setShowBetaModal(true); }}
               style={{
                 backgroundColor: '#0D0D0D', color: '#E8FF47',
                 border: 'none', padding: isMobile ? '20px 36px' : '24px 48px', borderRadius: 8,
@@ -777,7 +778,7 @@ export default function App() {
               5분 무료 진단 받기 <ArrowRight size={22} />
             </button>
             <button
-              onClick={() => setShowBetaModal(true)}
+              onClick={() => { trackCta('final_waitlist', 'final', '베타 대기자 등록'); setShowBetaModal(true); }}
               style={{
                 backgroundColor: 'transparent', color: '#0D0D0D',
                 border: '2px solid #0D0D0D', padding: isMobile ? '18px 34px' : '22px 46px', borderRadius: 8,
